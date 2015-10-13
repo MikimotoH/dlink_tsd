@@ -30,13 +30,6 @@ def curDownloading()->[str]:
     files = os.listdir(dlDir)
     return [_ for _ in files if _.endswith('.part')]
 
-def sha1(data)->str:
-    return hashlib.sha1(data).hexdigest()
-
-def getFileSha1(fileName)->str:
-    with open(fileName,mode='rb') as fin:
-        data = fin.read()
-        return sha1(data)
 
 def waitDownloading():
     curDwl = curDownloading()
